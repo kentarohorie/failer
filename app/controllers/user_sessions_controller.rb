@@ -5,8 +5,10 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
+      flash.now[:alert] = 'ログインしました。'
       redirect_to posts_path
     else
+      @user = User.new
       flash.now[:alert] = 'ログインに失敗しました。'
       render action: :new
     end

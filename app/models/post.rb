@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  belogns_to :user
+  belongs_to :user
 end

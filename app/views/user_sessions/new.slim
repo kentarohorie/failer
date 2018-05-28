@@ -1,0 +1,13 @@
+.card
+  .card-title
+    h3 ログイン
+  .card-body
+    = form_tag user_sessions_path, method: :post do |f|
+      .form-group
+        = label_tag :email
+        = email_field_tag :email, nil, class: 'form-control'
+      .form-group
+        = label_tag :password
+        = password_field_tag :password, nil, class: 'form-control'
+      .form-group
+        = submit_tag 'ログイン'

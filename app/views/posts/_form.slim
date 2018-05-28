@@ -1,0 +1,13 @@
+.card
+  .card-title
+    h3 新規失敗談投稿
+  .card-body
+    = form_for @post do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :content
+        = f.text_area :content, class: 'form-control'
+      .form-group
+        = f.submit
