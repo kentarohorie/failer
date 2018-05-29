@@ -12,11 +12,21 @@
   <body class="bg-light">
     <%= render 'layouts/header' %>
     <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
+      <% if flash[:alert] %>
+        <p class="alert alert-primary"><%= flash[:alert] %></p>
+      <% end %>
     </div>
     <main role="main" class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col-8">
+          <%= yield %>
+        </div>
+        <div class="col-4">
+          <div class="bg-white rounded box-shadow p-3 my-3">
+            <h6 class="border-bottom border-gray">人気のタグ</h6>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

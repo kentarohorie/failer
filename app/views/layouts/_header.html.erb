@@ -1,7 +1,7 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <h5 class="my-0 mr-md-auto font-weight-normal"><%= link_to '失敗談まとめ', root_path %></h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <%= link_to '新規失敗談', new_post_path, class: 'p-2 text_dark' %>
+    <%= link_to '失敗談を投稿する', new_post_path, class: 'btn btn-primary' %>
   </nav>
   <% if current_user %>
     <%= current_user.name %>
