@@ -1,6 +1,6 @@
 <div class="my-3 p-3 bg-white rounded box-shadow">
   <h6 class="border-bottom border-gray pb-2 mb-0">人気の投稿</h6>
-  <% @posts.each do |post| %>
+  <% @popular_posts.each do |post| %>
     <%= link_to post_path(post) do %>
       <div class="media text-muted pt-3">
         <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" src="https://placehold.jp/150x150.png" data-holder-rendered="true" style="width: 32px; height: 32px;">
@@ -24,7 +24,7 @@
 
 <div class="my-3 p-3 bg-white rounded box-shadow">
   <h6 class="border-bottom border-gray pb-2 mb-0">最新の投稿</h6>
-  <% @posts.each do |post| %>
+  <% @new_posts.each do |post| %>
     <%= link_to post_path(post) do %>
       <div class="media text-muted pt-3">
         <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" src="https://placehold.jp/150x150.png" data-holder-rendered="true" style="width: 32px; height: 32px;">

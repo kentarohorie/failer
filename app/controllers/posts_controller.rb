@@ -3,7 +3,10 @@ class PostsController < ApplicationController
   before_action :require_login, only: [:new, :create, :edit, :update]
 
   def index
-    @posts = Post.all
+    @popular_posts = Impression.where(controller_name: 'posts', action_name: 'show')
+    .group(:impressionable_id).order('count(*) DESC').limit(8).count.keys
+    .map { |id| Post.find(id)}
+    @new_posts = Post.order('created_at DESC').limit(8)
   end
 
   def show
@@ -18,10 +21,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(target_params)
+    tags = params[:tags].split(',').map { |tag| Tag.find_or_create_by(name: tag) }
+    @post.tags = tags
     if @post.save
-      params[:tags].split(',').each do |tag|
-        @post.tags.create(name: tag)
-      end
       redirect_to posts_path
     else
       flash.now[:alert] = '投稿に失敗しました。'

@@ -1,0 +1,17 @@
+.my-3.p-3.bg-white.rounded.box-shadow
+  h6.border-bottom.border-gray.pb-2.mb-0
+    = "「#{ @tag.name }」の投稿"
+  - @posts.each do |post|
+    = link_to post_path(post) do
+      .media.text-muted.pt-3
+        img.mr-2.rounded alt="32x32" data-holder-rendered="true" data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" src="https://placehold.jp/150x150.png" style=("width: 32px; height: 32px;") /
+        .media-body.pb-3.mb-0.small.lh-125.border-bottom.border-gray
+          .d-flex.justify-content-between.align-items-center.w-100
+            strong.text-gray-dark= post.title
+          - post.tags.each do |tag|
+            span.badge.badge-secondary
+              = tag.name
+          br/
+          = post.content
+          span.d-block
+            | by #{post.user.name} #{post.created_at.strftime('%Y %m月%d日')}

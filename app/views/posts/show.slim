@@ -1,0 +1,13 @@
+.my-3.p-3.bg-white.rounded.box-shadow
+  .media.text-muted
+    = image_tag 'https://placehold.jp/150x150.png', class: 'mr-2 rounded', style: 'width: 32px; height: 32px;'
+    .media-body
+      span.mr-2 = @post.user.name
+      span = @post.created_at.strftime('%Y年%m月%d日')
+      | に投稿
+  h2.pt-4 = @post.title
+  - @post.tags.each do |tag|
+    span.badge.badge-secondary
+      = tag.name
+  .mt-4
+    = simple_format @post.content
