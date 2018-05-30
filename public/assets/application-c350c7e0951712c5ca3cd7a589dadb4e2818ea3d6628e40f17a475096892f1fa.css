@@ -1,0 +1,8 @@
+@import url(bootstrap/bootstrap.min.css);
+@import url(bootstrap/bootstrap-grid.min.css);
+@import url(bootstrap/bootstrap-reboot.min.css);
+@import url(jquery.tagsinput.css);
+/* line 1, /Users/horiekentarou/backup/web_creating_work/ratneko/failers/app/assets/stylesheets/custom.scss */
+a {
+  text-decoration: none !important;
+}
