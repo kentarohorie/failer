@@ -1,5 +1,9 @@
 {
   "name": "failers",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "yarn": "0.27.5",
+    "node": "8.1.3"
+  }
 }
