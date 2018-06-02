@@ -1,19 +1,18 @@
-.card
-  .card-title
-    h3 新規ユーザー登録
-  .card-body
-    = form_for @user do |f|
-      .form-group
-        = f.label :email
-        = f.email_field :email, class: 'form-control'
-      .form-group
-        = f.label :password
-        = f.password_field :password, class: 'form-control'
-      .form-group
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation, class: 'form-control'
-      .form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-      .form-group
-        = f.submit
+.my-3.p-3.bg-white.rounded.box-shadow
+  h3 新規ユーザー登録
+  = form_for @user do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, class: 'form-control', required: :required
+    .form-group
+      = f.label :password
+      = f.password_field :password, class: 'form-control', required: :required
+    .form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, class: 'form-control', required: :required
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control', required: :required
+    .form-group
+      = f.submit '会員登録', class: 'btn btn-primary'
+      = link_to 'ログイン', new_user_session_path, class: 'btn btn-default'

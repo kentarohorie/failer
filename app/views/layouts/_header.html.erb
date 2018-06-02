@@ -4,7 +4,14 @@
     <%= link_to '失敗談を投稿する', new_post_path, class: 'btn btn-primary' %>
   </nav>
   <% if current_user %>
-    <%= current_user.name %>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= current_user.name %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'ログアウト', user_session_path(current_user), class: 'dropdown-item', method: 'DELETE' %>
+      </div>
+    </div>
   <% else %>
     <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-primary' %>
   <% end %>

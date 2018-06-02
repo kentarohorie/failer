@@ -1,3 +1,5 @@
+- set_meta_tags title: @post.title, description: (excerpt @post.content, '', radius: 100), og: {title: @post.title, type: 'article'}
+
 .my-3.p-3.bg-white.rounded.box-shadow
   .media.text-muted
     = image_tag 'https://placehold.jp/150x150.png', class: 'mr-2 rounded', style: 'width: 32px; height: 32px;'

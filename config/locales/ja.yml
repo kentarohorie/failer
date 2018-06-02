@@ -7,6 +7,11 @@ ja:
       post:
         title: タイトル
         content: 内容
+      user:
+        email: メールアドレス
+        name: お名前
+        password: パスワード
+        password_confirmation: パスワード確認
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

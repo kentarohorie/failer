@@ -14,9 +14,11 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.new
+    @hide_sidebar = true
   end
 
   def edit
+    @hide_sidebar = true
   end
 
   def create

@@ -4,7 +4,7 @@
     <%= link_to post_path(post) do %>
       <div class="media text-muted pt-3">
         <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" src="https://placehold.jp/150x150.png" data-holder-rendered="true" style="width: 32px; height: 32px;">
-        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" style="overflow: hidden;">
           <div class="d-flex justify-content-between align-items-center w-100">
             <strong class="text-gray-dark"><%= post.title %></strong>
           </div>
@@ -14,7 +14,9 @@
             </span>
           <% end %>
           <br>
-          <%= post.content %>
+          <div class="content">
+            <%= excerpt post.content, '', radius: 100 %>
+          </div>
           <span class="d-block">by <%= post.user.name %> <%= post.created_at.strftime('%Y %m月%d日') %></span>
         </div>
       </div>
@@ -28,7 +30,7 @@
     <%= link_to post_path(post) do %>
       <div class="media text-muted pt-3">
         <img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="mr-2 rounded" src="https://placehold.jp/150x150.png" data-holder-rendered="true" style="width: 32px; height: 32px;">
-        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" style="overflow: hidden;">
           <div class="d-flex justify-content-between align-items-center w-100">
             <strong class="text-gray-dark"><%= post.title %></strong>
           </div>
@@ -38,7 +40,9 @@
             </span>
           <% end %>
           <br>
-          <%= post.content %>
+          <div class="content">
+            <%= excerpt post.content, '', radius: 100 %>
+          </div>
           <span class="d-block">by <%= post.user.name %> <%= post.created_at.strftime('%Y %m月%d日') %></span>
         </div>
       </div>

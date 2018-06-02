@@ -2,11 +2,15 @@
 <html>
   <head>
     <title>Failers</title>
+    <%= display_meta_tags MetatagsHelper.default_meta_tags %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
   </head>
 
   <body class="bg-light">
@@ -18,10 +22,10 @@
     </div>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-8">
+        <div class="<%= @hide_sidebar ? 'col-12' : 'col-8' %>">
           <%= yield %>
         </div>
-        <div class="col-4">
+        <div class="col-4" <%= 'style="display: none;"' unless @hide_sidebar %>>
           <div class="bg-white rounded box-shadow p-3 my-3">
             <h6 class="pb-1">人気のタグ</h6>
             <ul class="list-group list-group-flush">

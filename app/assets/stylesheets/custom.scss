@@ -1,3 +1,7 @@
 a {
   text-decoration: none !important;
 }
+
+button[data-original-title="Picture"], button[data-original-title="Video"] {
+  display: none;
+}

@@ -9,6 +9,6 @@
       = text_field_tag :tags, nil, id: 'js-tagsinput'
     .form-group
       = f.label :content
-      = f.text_area :content, class: 'form-control'
+      = f.text_area :content, id: 'summernote'
     .form-group
       = f.submit '投稿する', class: 'btn btn-primary'
